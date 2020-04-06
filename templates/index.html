@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Predict Your Admission</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict Your chances for Admission</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="gre_score" id="gre_score" placeholder="Please Enter Your GRE Score" required>
+            <br>
+            <input type="number" name="toefl_score" id="toefl_score" placeholder="Please Enter Your TOEFL Score">
+            <br>
+            <input type="number" name="university_rating" id="university_rating" placeholder="What is Your University Rating">
+            <br>
+            <input type="number" name="sop" id="sop" placeholder="Your Statement of purpose Strength(0-5)">
+            <br>
+            <input type="number" name="lor" id="lor" placeholder="Your Letter of Recommendatation Strength(0-5)">
+            <br>
+            <input type="number" name="cgpa" id="cgpa"placeholder="Your Present CGPA" step="any">
+            <br>
+
+            <p>Do you have any Reseach Experience</p>
+            <select name="research" id="research">
+            <br>
+            <br>
+            
+
+  
+            <option value="Yes">Yes</option>
+  
+            <option value="No">No</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <input type="submit" value="Predict Your Chances">
+        </form>
+    </div>
+</div>
+{% endblock %}
